@@ -1,0 +1,36 @@
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #eef3fa;
+  padding: 40px;
+  margin: 40px;
+  border-radius: 16px;
+}
+
+.feature {
+  flex: 1;
+  text-align: center;
+}
+
+.feature img {
+  width: 50px;
+  margin-bottom: 12px;
+}
+
+.feature h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #3c2a98;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #555;
+}
+
+@media (max-width: 900px) {
+  .features {
+    flex-direction: column;
+  }
+}

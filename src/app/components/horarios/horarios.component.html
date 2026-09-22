@@ -1,0 +1,25 @@
+<div class="horarios">
+  <button class="btn-horarios" (click)="togglePanel()">
+    <span>Conoce nuestros horarios</span>
+    <span class="flecha" [class.rotada]="panelAbierto">▾</span>
+  </button>
+
+  <div class="panel-horarios" [class.abierto]="panelAbierto">
+    <div class="panel-contenido">
+      <div class="fila-horario" *ngFor="let horario of horarios">
+        <div class="info-horario">
+          <h4>{{ horario.titulo }}</h4>
+          <p>{{ horario.texto }}</p>
+        </div>
+
+        <span
+          class="estado"
+          [class.estado-abierto]="estaAbierto(horario.tipo)"
+          [class.estado-cerrado]="!estaAbierto(horario.tipo)"
+        >
+          {{ estaAbierto(horario.tipo) ? 'Abierto ahora' : 'Cerrado ahora' }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

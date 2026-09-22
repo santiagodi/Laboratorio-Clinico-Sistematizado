@@ -1,0 +1,61 @@
+<footer class="footer">
+  <div class="footer-top">
+
+    <div class="footer-col footer-marca">
+      <div class="logo">
+        <img src="assets/logo.png" alt="Laboratorio Clínico Sistematizado">
+        <div class="logo-texto">
+          <span>Laboratorio</span>
+          <span>Clínico Sistematizado</span>
+          <span class="ltda">Ltda</span>
+        </div>
+      </div>
+
+      <p>Cuidamos tu salud con precisión y confianza.</p>
+
+      <div class="redes">
+        <a href="#" target="_blank">
+          <img src="assets/social.png" alt="Instagram">
+        </a>
+        <a href="#" target="_blank">
+          <img src="assets/facebook.png" alt="Facebook">
+        </a>
+        <a href="https://wa.me/573137166521" target="_blank">
+          <img src="assets/whatsapp.png" alt="WhatsApp">
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Enlaces rápidos</h4>
+      <ul>
+        <li *ngFor="let enlace of enlacesRapidos">
+          <a [href]="enlace.ruta">{{ enlace.texto }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <ul>
+        <li *ngFor="let servicio of servicios">{{ servicio }}</li>
+      </ul>
+    </div>
+
+    <div class="footer-col footer-contacto">
+      <h4>Contacto</h4>
+      <p>Carrera 13 # 1N-35<br>Armenia, Quindío</p>
+      <p>313 716 6521</p>
+      <p>info&#64;labclinico.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {{ anioActual }} Laboratorio Clínico Sistematizado Ltda. Todos los derechos reservados.</p>
+    <div class="footer-legales">
+      <a href="#">Política de privacidad</a>
+      <a href="#">Términos y condiciones</a>
+    </div>
+  </div>
+</footer>

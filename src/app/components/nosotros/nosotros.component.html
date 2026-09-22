@@ -1,0 +1,19 @@
+<section class="nosotros" id="nosotros">
+  <div class="nosotros-imagen">
+    <img src="assets/lab-img-p.jpg" alt="Personal de laboratorio">
+  </div>
+
+  <div class="nosotros-texto">
+    <span class="etiqueta">Sobre nosotros</span>
+    <h2>Comprometidos con tu salud desde hace más de {{ aniosExperiencia }} años</h2>
+    <p>
+      En Laboratorio Clínico Sistematizado, combinamos experiencia, tecnología
+      y calidez humana para ofrecer resultados confiables que apoyan el
+      diagnóstico y el bienestar de nuestros pacientes.
+    </p>
+
+    <ul class="lista-puntos">
+      <li *ngFor="let punto of puntos">✔ {{ punto }}</li>
+    </ul>
+  </div>
+</section>

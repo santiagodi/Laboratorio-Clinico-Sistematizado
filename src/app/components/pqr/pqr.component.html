@@ -1,0 +1,36 @@
+<section class="pagina-info" id="pqr">
+  <div class="contenedor contenedor-angosto">
+    <h1>PQR — Peticiones, quejas y reclamos</h1>
+    <p class="subtitulo">
+      Cuéntanos qué necesitas. Al enviar el formulario, se abrirá WhatsApp con tu
+      mensaje ya listo para enviarnos.
+    </p>
+
+    <form class="formulario" (ngSubmit)="enviar()">
+      <label for="tipo">Tipo de solicitud</label>
+      <select id="tipo" name="tipo" [(ngModel)]="tipo">
+        <option value="Petición">Petición</option>
+        <option value="Queja">Queja</option>
+        <option value="Reclamo">Reclamo</option>
+        <option value="Sugerencia">Sugerencia</option>
+      </select>
+
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Nombre y apellidos">
+
+      <label for="documento">Número de documento</label>
+      <input type="text" id="documento" name="documento" [(ngModel)]="documento" placeholder="1234567890">
+
+      <label for="telefono">Teléfono de contacto</label>
+      <input type="tel" id="telefono" name="telefono" [(ngModel)]="telefono" placeholder="300 123 4567">
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" [(ngModel)]="mensaje" rows="5" placeholder="Cuéntanos los detalles..."></textarea>
+
+      <p class="error" *ngIf="errorMensaje">{{ errorMensaje }}</p>
+      <p class="confirmacion" *ngIf="enviado">Tu mensaje se abrió en WhatsApp, solo confirma el envío allá.</p>
+
+      <button type="submit" class="btn-primario">Enviar por WhatsApp</button>
+    </form>
+  </div>
+</section>

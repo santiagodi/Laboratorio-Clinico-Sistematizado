@@ -1,0 +1,20 @@
+<section class="servicios" id="servicios">
+  <h2>Nuestros servicios</h2>
+  <p class="subtitulo">
+    Ofrecemos una amplia gama de exámenes de laboratorio para el cuidado de tu salud.
+  </p>
+
+  <div class="servicios-grid">
+    <div class="servicio-card" *ngFor="let servicio of servicios">
+      <div class="icono-circle">
+        <img [src]="servicio.icono" [alt]="servicio.nombre">
+      </div>
+      <h3>{{ servicio.nombre }}</h3>
+      <p>{{ servicio.descripcion }}</p>
+    </div>
+  </div>
+
+  <div class="ver-todos">
+    <a href="#" class="btn-secundario">Ver todos los servicios</a>
+  </div>
+</section>

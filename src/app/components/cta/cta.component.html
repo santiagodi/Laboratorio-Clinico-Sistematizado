@@ -1,0 +1,37 @@
+<section class="cta" id="contacto">
+  <div class="cta-texto">
+    <h2>¿Necesitas realizarte un examen?</h2>
+    <p>Estamos aquí para ayudarte. Contáctanos y recibe la mejor atención.</p>
+  </div>
+
+  <div class="cta-contacto">
+    <div class="contacto-item" (click)="abrirWhatsapp()">
+      <img src="assets/whatsapp.png" alt="WhatsApp">
+      <span>Escríbenos por WhatsApp</span>
+      <strong>3137166521</strong>
+    </div>
+
+    <div class="contacto-item" (click)="copiarTelefono()">
+      <img src="assets/circulo.png" alt="WhatsApp">
+      <span>Copiar Telefono</span>
+      <strong>{{ telefono }}</strong>
+    </div>
+
+    <div class="toast-copiado"
+      *ngIf="mensajeCopiado">
+        Numero Copiado!
+    </div>
+
+    <div class="contacto-item" (click)="abrirWhatsapp()">
+      <img src="assets/whatsapp.png" alt="WhatsApp">
+      <span>ESTE VA A SER PARA EL CORREO</span>
+      <strong>3137166521</strong>
+    </div>
+  </div>
+
+
+  <div class="cta-horarios">
+    <h3>Nuestros horarios de atención</h3>
+    <app-horarios></app-horarios>
+  </div>
+</section>

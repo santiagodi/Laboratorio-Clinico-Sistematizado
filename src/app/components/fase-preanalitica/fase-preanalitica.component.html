@@ -1,0 +1,29 @@
+<section class="pagina-info" id="fase-preanalitica">
+  <div class="contenedor">
+    <h1>Fase preanalítica</h1>
+    <p class="subtitulo">
+      Aquí encuentras las indicaciones que debes tener en cuenta antes de realizarte
+      un examen, según el tipo de muestra que se requiera.
+    </p>
+
+    <div class="tarjeta-indicacion" *ngFor="let indicacion of indicaciones">
+      <div class="tarjeta-encabezado">
+        <span class="icono">{{ indicacion.icono }}</span>
+        <h3>{{ indicacion.titulo }}</h3>
+      </div>
+
+      <p class="detalle">{{ indicacion.detalle }}</p>
+
+      <ul class="lista-examenes">
+        <li *ngFor="let examen of indicacion.examenes">{{ examen }}</li>
+      </ul>
+    </div>
+
+    <div class="recomendaciones">
+      <h3>Recomendaciones generales</h3>
+      <ul>
+        <li *ngFor="let recomendacion of recomendaciones">{{ recomendacion }}</li>
+      </ul>
+    </div>
+  </div>
+</section>

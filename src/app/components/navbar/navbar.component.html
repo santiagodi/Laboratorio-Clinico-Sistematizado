@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <div class="navbar-container">
+
+    <div class="logo" (click)="irAlInicio()">
+      <img src="assets/logo.png" alt="Laboratorio Clínico Sistematizado">
+      <div class="logo-texto">
+        <span>Laboratorio</span>
+        <span>Clínico Sistematizado</span>
+        <span class="ltda">Ltda</span>
+      </div>
+    </div>
+
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+
+    <ul class="nav-links" [class.activo]="menuAbierto">
+      <li *ngFor="let enlace of enlaces">
+        <a *ngIf="enlace.ruta.startsWith('#')" [href]="enlace.ruta">{{ enlace.texto }}</a>
+        <a *ngIf="!enlace.ruta.startsWith('#')" [routerLink]="enlace.ruta">{{ enlace.texto }}</a>
+      </li>
+
+      <a href="#contacto" class="btn-agendar">Conoce nuestros horarios</a>
+    </ul>
+
+  </div>
+</nav>

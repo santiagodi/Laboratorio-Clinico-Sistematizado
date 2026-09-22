@@ -1,0 +1,7 @@
+<section class="features">
+  <div class="feature" *ngFor="let item of items">
+    <img [src]="item.icono" [alt]="item.titulo">
+    <h3>{{ item.titulo }}</h3>
+    <p>{{ item.descripcion }}</p>
+  </div>
+</section>
