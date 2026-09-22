@@ -19,7 +19,7 @@ export class NavbarComponent {
     { texto: 'Inicio', ruta: '#inicio' },
     { texto: 'Nosotros', ruta: '#nosotros' },
     { texto: 'Servicios', ruta: '#servicios' },
-    { texto: 'Fase preanalítica', ruta: '/fase-preanalitica' },
+    { texto: 'Preanalítica', ruta: '/fase-preanalitica' },
     { texto: 'PQR', ruta: '/pqr' },
     { texto: 'Contacto', ruta: '#contacto' }
   ];
