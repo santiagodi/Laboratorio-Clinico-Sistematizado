@@ -10,13 +10,14 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   anioActual = new Date().getFullYear();
+  correo = 'santyijaji@gmail.com';
 
   enlacesRapidos = [
     { texto: 'Inicio', ruta: '#inicio' },
     { texto: 'Nosotros', ruta: '#nosotros' },
     { texto: 'Servicios', ruta: '#servicios' },
-    { texto: 'Pacientes', ruta: '#pacientes' },
-    { texto: 'Resultados', ruta: '#resultados' },
+    { texto: 'Preanalítica', ruta: '/fase-preanalitica' },
+    { texto: 'PQR', ruta: '/pqr' },
     { texto: 'Contacto', ruta: '#contacto' }
   ];
 
@@ -25,6 +26,13 @@ export class FooterComponent {
     'Química sanguínea',
     'Microbiología',
     'Inmunología',
-    'Exámenes especializados'
+    'Exámenes especializados',
+    'Coagulación',
+    'Microscópica',
+    'Genética molecular'
   ];
+  
+  abrirCorreo() {
+  window.open(`mailto:${this.correo}`, '_blank');
+  }
 }

@@ -19,9 +19,9 @@ export class NavbarComponent {
     { texto: 'Inicio', ruta: '#inicio' },
     { texto: 'Nosotros', ruta: '#nosotros' },
     { texto: 'Servicios', ruta: '#servicios' },
+    { texto: 'Contacto', ruta: '#contacto' },
     { texto: 'Preanalítica', ruta: '/fase-preanalitica' },
-    { texto: 'PQR', ruta: '/pqr' },
-    { texto: 'Contacto', ruta: '#contacto' }
+    { texto: 'PQR', ruta: '/pqr' }
   ];
 
   abrirWhatsapp() {

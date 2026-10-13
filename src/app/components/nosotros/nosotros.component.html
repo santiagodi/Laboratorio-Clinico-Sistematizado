@@ -7,13 +7,29 @@
     <span class="etiqueta">Sobre nosotros</span>
     <h2>Comprometidos con tu salud desde hace más de {{ aniosExperiencia }} años</h2>
     <p>
-      En Laboratorio Clínico Sistematizado, combinamos experiencia, tecnología
-      y calidez humana para ofrecer resultados confiables que apoyan el
-      diagnóstico y el bienestar de nuestros pacientes.
+      Laboratorio Clínico Sistematizado Ltda. es una de las empresas de apoyo
+      diagnóstico en pruebas de laboratorio clínico más reconocidas del Quindío,
+      con más de {{ aniosExperiencia }} años al servicio de la comunidad y cerca
+      de 280 pruebas distintas. Nace el 13 de marzo de 1995 por iniciativa de
+      los doctores Melva Sofía Peláez Hoyos y Bernardo Arias Gómez. Hoy contamos
+      con una amplia cobertura en el eje cafetero, respaldada en la calidad y
+      confiabilidad de nuestros resultados.
     </p>
 
     <ul class="lista-puntos">
-      <li *ngFor="let punto of puntos">✔ {{ punto }}</li>
+      <li *ngFor="let punto of puntos">✮ {{ punto }}</li>
     </ul>
+  </div>
+</section>
+
+<section class="mision-vision">
+  <div class="tarjeta-mv">
+    <h3>Misión</h3>
+    <p>{{ mision }}</p>
+  </div>
+
+  <div class="tarjeta-mv">
+    <h3>Visión</h3>
+    <p>{{ vision }}</p>
   </div>
 </section>

@@ -11,28 +11,28 @@ import { CommonModule } from '@angular/common';
 export class FasePreanaliticaComponent {
   indicaciones = [
     {
-      titulo: 'Exámenes que requieren ayuno',
-      icono: '⏱️',
-      detalle: 'Ayuno de 8 a 12 horas antes de la toma de la muestra. Se permite tomar agua.',
-      examenes: ['Glicemia en ayunas', 'Perfil lipídico', 'Química sanguínea completa']
-    },
-    {
       titulo: 'Muestra de sangre',
       icono: '🩸',
-      detalle: 'No requieren preparación especial salvo que se indique lo contrario.',
-      examenes: ['Hemograma completo', 'Perfil tiroideo', 'Pruebas de coagulación', 'Marcadores tumorales']
+      detalle: 'Es la muestra más común. Incluye estudios de hematología, química clínica, hormonas, coagulación, inmunología e infecciosas, y marcadores tumorales, entre otros.',
+      examenes: ['Hematología', 'Química clínica', 'Hormonas', 'Coagulación', 'Inmunología e infecciosas', 'Marcadores tumorales']
     },
     {
       titulo: 'Muestra de orina',
       icono: '🧪',
-      detalle: 'Se recomienda la primera orina de la mañana, en frasco estéril.',
-      examenes: ['Uroanálisis', 'Urocultivo']
+      detalle: 'Se recomienda la primera orina de la mañana, en el frasco entregado por el laboratorio.',
+      examenes: ['Uroanálisis', 'Electrolitos en orina']
     },
     {
       titulo: 'Muestra de materia fecal',
       icono: '🔬',
       detalle: 'Recolectar en el frasco entregado por el laboratorio, evitando mezclar con orina.',
-      examenes: ['Coprocultivo', 'Coproscópico']
+      examenes: ['Coproanálisis']
+    },
+    {
+      titulo: 'Exámenes que pueden requerir ayuno',
+      icono: '⏱️',
+      detalle: 'Algunos exámenes de química clínica, como la glicemia y el perfil lipídico, suelen requerir ayuno de 8 a 12 horas. Confirma este dato con el laboratorio al momento de agendar tu examen.',
+      examenes: ['Glicemia', 'Perfil lipídico (colesterol y triglicéridos)']
     }
   ];
 

@@ -31,7 +31,7 @@ export class ServiciosComponent {
       descripcion: 'Pruebas especializadas para evaluar el sistema inmunológico y detectar enfermedades.'
     },
     {
-      icono: 'assets/adn.png',
+      icono: 'assets/especializados.png',
       nombre: 'Exámenes especializados',
       descripcion: 'Pruebas específicas para diferentes condiciones médicas y necesidades diagnósticas.'
     },
@@ -41,7 +41,7 @@ export class ServiciosComponent {
       descripcion: 'Pruebas que evalúan la capacidad de la sangre para coagular correctamente.'
     },
     {
-      icono: 'assets/microscopica.png',
+      icono: 'assets/microscopico.png',
       nombre: 'Microscópica',
       descripcion: 'Análisis microscópico de muestras para identificar células, parásitos u otras estructuras.'
     },

@@ -43,12 +43,29 @@
   width: 45%;
 }
 
-.btn-primario {
-  background-color: #3c2a98;
-  color: #fff;
-  padding: 12px 22px;
-  border-radius: 8px;
-  display: inline-block;
+.mision-vision {
+  display: flex;
+  gap: 24px;
+  padding: 0 40px 50px;
+}
+
+.tarjeta-mv {
+  flex: 1;
+  background-color: #eef3fa;
+  border-radius: 16px;
+  padding: 25px 28px;
+}
+
+.tarjeta-mv h3 {
+  color: #3c2a98;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.tarjeta-mv p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 @media (max-width: 900px) {
@@ -58,5 +75,10 @@
 
   .lista-puntos li {
     width: 100%;
+  }
+
+  .mision-vision {
+    flex-direction: column;
+    padding: 0 20px 40px;
   }
 }

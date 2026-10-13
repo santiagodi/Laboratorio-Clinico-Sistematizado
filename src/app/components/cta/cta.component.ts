@@ -12,7 +12,6 @@ import { CommonModule } from '@angular/common';
 export class CtaComponent {
   telefono = '3137166521';
   whatsapp = '573137166521';
-  correo = 'santyijaji@gmail.com';
 
   abrirWhatsapp() {
     window.open(`https://wa.me/${this.whatsapp}`, '_blank');
@@ -26,9 +25,5 @@ export class CtaComponent {
       setTimeout(() => {
         this.mensajeCopiado = false;
       }, 2000);
-  }
-
-  abrirCorreo() {
-  window.open(`mailto:${this.correo}`, '_blank');
   }
 }

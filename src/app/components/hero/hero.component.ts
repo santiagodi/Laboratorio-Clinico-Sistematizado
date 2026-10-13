@@ -11,7 +11,7 @@ export class HeroComponent {
   whatsapp = '573137166521';
 
   direccion = 'Carrera 13 # 1N-35, Armenia, Quindío';
-  aniosExperiencia = 20;
+  aniosExperiencia = 29;
 
   abrirWhatsapp() {
     window.open(`https://wa.me/${this.whatsapp}`, '_blank');

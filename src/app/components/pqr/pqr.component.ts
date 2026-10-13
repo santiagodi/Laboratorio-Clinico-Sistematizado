@@ -10,7 +10,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './pqr.component.css'
 })
 export class PqrComponent {
-  whatsapp = '573137166521';
+  whatsapp = '573005264929';
+  correoDestino = 'santyijaji@gmail.com';
 
   tipo = 'Petición';
   nombre = '';
@@ -21,7 +22,7 @@ export class PqrComponent {
   errorMensaje = '';
   enviado = false;
 
-  enviar() {
+  enviar(destino: 'whatsapp' | 'correo') {
     this.errorMensaje = '';
 
     if (!this.nombre || !this.documento || !this.telefono || !this.mensaje) {
@@ -29,15 +30,25 @@ export class PqrComponent {
       return;
     }
 
-    const texto =
-      `*${this.tipo}*\n` +
-      `Nombre: ${this.nombre}\n` +
-      `Documento: ${this.documento}\n` +
-      `Teléfono: ${this.telefono}\n` +
-      `Mensaje: ${this.mensaje}`;
+    if (destino === 'whatsapp') {
+      const texto =
+        `*${this.tipo}*\n` +
+        `Nombre: ${this.nombre}\n` +
+        `Documento: ${this.documento}\n` +
+        `Teléfono: ${this.telefono}\n` +
+        `Mensaje: ${this.mensaje}`;
 
-    const url = `https://wa.me/${this.whatsapp}?text=${encodeURIComponent(texto)}`;
-    window.open(url, '_blank');
+      window.open(`https://wa.me/${this.whatsapp}?text=${encodeURIComponent(texto)}`, '_blank');
+    } else {
+      const asunto = `${this.tipo} - ${this.nombre}`;
+      const cuerpo =
+        `Nombre: ${this.nombre}\n` +
+        `Documento: ${this.documento}\n` +
+        `Teléfono: ${this.telefono}\n\n` +
+        `Mensaje:\n${this.mensaje}`;
+
+      window.location.href = `mailto:${this.correoDestino}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+    }
 
     this.enviado = true;
   }

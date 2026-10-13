@@ -82,3 +82,21 @@
   margin-top: 20px;
   cursor: pointer;
 }
+
+.botones-envio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-secundario {
+  width: 100%;
+  background: none;
+  border: 1px solid #3c2a98;
+  color: #3c2a98;
+  padding: 13px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}

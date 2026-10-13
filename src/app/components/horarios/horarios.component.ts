@@ -30,7 +30,7 @@ export class HorariosComponent implements OnInit, OnDestroy {
     {
       tipo: 'general' as const,
       titulo: 'Atención general',
-      texto: 'La jornada de atención general es continua, Desde el lunes a domingo'
+      texto: 'Atención las 24 horas, todos los días'
     },
     {
       tipo: 'ayunas' as const,
