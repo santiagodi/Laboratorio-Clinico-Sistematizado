@@ -5,7 +5,7 @@
 }
 
 .contenedor {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -21,50 +21,102 @@
   margin: 10px 0 30px;
 }
 
-.tarjeta-indicacion {
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.filtro {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #555;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.filtro:hover {
+  border-color: #3c2a98;
+}
+
+.filtro.activo {
+  background-color: #f0edfb;
+  border-color: #3c2a98;
+  color: #3c2a98;
+  font-weight: bold;
+}
+
+.cuadricula {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  text-align: left;
   background-color: #fff;
   border: 1px solid #e2e2e2;
   border-radius: 12px;
-  padding: 20px 24px;
-  margin-bottom: 16px;
+  padding: 16px;
+  font-family: inherit;
+  cursor: pointer;
 }
 
-.tarjeta-encabezado {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
+.tarjeta:hover {
+  border-color: #3c2a98;
 }
 
 .icono {
-  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #f0edfb;
+  font-size: 20px;
 }
 
-.tarjeta-encabezado h3 {
-  color: #3c2a98;
-  font-size: 17px;
+.tarjeta-nombre {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
 }
 
-.detalle {
+.tarjeta-tipo {
+  font-size: 13px;
   color: #666;
-  font-size: 14px;
-  margin-bottom: 12px;
 }
 
-.lista-examenes {
+.etiquetas {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
-.lista-examenes li {
-  list-style: none;
+.etiqueta {
   background-color: #f0edfb;
   color: #3c2a98;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
-  padding: 6px 12px;
+  padding: 4px 10px;
   border-radius: 20px;
+}
+
+.sin-tarjetas {
+  text-align: center;
+  color: #666;
+  margin-top: 10px;
 }
 
 .recomendaciones {
@@ -72,7 +124,7 @@
   border: 1px solid #e2e2e2;
   border-radius: 12px;
   padding: 20px 24px;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 .recomendaciones h3 {
@@ -89,4 +141,117 @@
 
 .recomendaciones li {
   margin-bottom: 8px;
+}
+
+.fondo-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: aparecer 0.2s ease;
+}
+
+.panel {
+  width: 100%;
+  max-width: 460px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  animation: entrar 0.25s ease;
+}
+
+.panel-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.panel-titulo {
+  flex: 1;
+}
+
+.panel-titulo h2 {
+  font-size: 18px;
+  color: #222;
+}
+
+.panel-titulo p {
+  font-size: 13px;
+  color: #666;
+}
+
+.btn-cerrar {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-cerrar:hover {
+  background-color: #f0edfb;
+  border-color: #3c2a98;
+  color: #3c2a98;
+}
+
+.panel h4 {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.lista-preparacion {
+  margin-bottom: 20px;
+}
+
+.lista-preparacion li {
+  font-size: 14px;
+  color: #333;
+  padding: 6px 0;
+}
+
+.lista-preparacion li::before {
+  content: '✔';
+  color: #3c2a98;
+  margin-right: 10px;
+}
+
+.panel-nota {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid #eee;
+  font-size: 12px;
+  color: #666;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .fondo-panel {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .panel {
+    max-width: 100%;
+    border-radius: 16px 16px 0 0;
+  }
 }

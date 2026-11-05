@@ -3,21 +3,35 @@
     <h1>Fase preanalítica</h1>
     <p class="subtitulo">
       Aquí encuentras las indicaciones que debes tener en cuenta antes de realizarte
-      un examen, según el tipo de muestra que se requiera.
+      un examen, ten en cuenta que aqui estan los examenes mas frecuentes de alta demanda,
+      si no encuentras el que necesitas ponte en contacto con nosotros.
     </p>
 
-    <div class="tarjeta-indicacion" *ngFor="let indicacion of indicaciones">
-      <div class="tarjeta-encabezado">
-        <span class="icono">{{ indicacion.icono }}</span>
-        <h3>{{ indicacion.titulo }}</h3>
-      </div>
-
-      <p class="detalle">{{ indicacion.detalle }}</p>
-
-      <ul class="lista-examenes">
-        <li *ngFor="let examen of indicacion.examenes">{{ examen }}</li>
-      </ul>
+    <div class="filtros">
+      <button
+        class="filtro"
+        *ngFor="let filtro of filtros"
+        [class.activo]="filtro.clave === filtroActual"
+        (click)="elegirFiltro(filtro.clave)"
+      >
+        {{ filtro.texto }}
+      </button>
     </div>
+
+    <div class="cuadricula">
+      <button class="tarjeta" *ngFor="let tarjeta of tarjetasVisibles" (click)="abrir(tarjeta)">
+        <span class="icono">{{ tarjeta.icono }}</span>
+        <span class="tarjeta-nombre">{{ tarjeta.nombre }}</span>
+        <span class="tarjeta-tipo">{{ resumen(tarjeta) }}</span>
+        <span class="etiquetas">
+          <span class="etiqueta" *ngFor="let etiqueta of tarjeta.etiquetas">{{ etiqueta }}</span>
+        </span>
+      </button>
+    </div>
+
+    <p class="sin-tarjetas" *ngIf="tarjetasVisibles.length === 0">
+      Aún no hay información en esta categoría.
+    </p>
 
     <div class="recomendaciones">
       <h3>Recomendaciones generales</h3>
@@ -27,3 +41,36 @@
     </div>
   </div>
 </section>
+
+<div class="fondo-panel" *ngIf="seleccionado" (click)="cerrar()">
+  <div
+    class="panel"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="seleccionado.nombre"
+    (click)="$event.stopPropagation()"
+  >
+    <div class="panel-encabezado">
+      <span class="icono">{{ seleccionado.icono }}</span>
+      <div class="panel-titulo">
+        <h2>{{ seleccionado.nombre }}</h2>
+        <p>{{ resumen(seleccionado) }}</p>
+      </div>
+      <button class="btn-cerrar" (click)="cerrar()" aria-label="Cerrar">✕</button>
+    </div>
+
+    <h4>Preparación</h4>
+    <ul class="lista-preparacion">
+      <li *ngFor="let indicacion of seleccionado.preparacion">{{ indicacion }}</li>
+    </ul>
+
+    <ng-container *ngIf="seleccionado.tipo === 'paquete'">
+      <h4>Exámenes incluidos</h4>
+      <div class="etiquetas">
+        <span class="etiqueta" *ngFor="let examen of seleccionado.examenes">{{ examen }}</span>
+      </div>
+    </ng-container>
+
+    <p class="panel-nota">Ante cualquier duda, confirma con el laboratorio antes de tu visita.</p>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +10,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  constructor(private router: Router) {}
+
   menuAbierto = false;
 
   telefono = '(6) 746 2504';
@@ -29,8 +31,10 @@ export class NavbarComponent {
   }
 
   irAlInicio() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+  this.router.navigate(['/']).then(() => {
+    window.scrollTo({ top: 0 });
+  });
+}
 
   toggleMenu() {
     this.menuAbierto = !this.menuAbierto;

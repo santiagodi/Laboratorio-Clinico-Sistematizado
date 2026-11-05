@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
 })
 export class FooterComponent {
   anioActual = new Date().getFullYear();
-  correo = 'santyijaji@gmail.com';
 
   enlacesRapidos = [
     { texto: 'Inicio', ruta: '#inicio' },
@@ -31,8 +30,5 @@ export class FooterComponent {
     'Microscópica',
     'Genética molecular'
   ];
-  
-  abrirCorreo() {
-  window.open(`mailto:${this.correo}`, '_blank');
-  }
+
 }

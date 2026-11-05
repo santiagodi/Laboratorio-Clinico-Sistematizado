@@ -1,6 +1,9 @@
 <section class="hero" id="inicio">
   <div class="hero-imagen">
-    <img src="assets/lab-img-p.jpg" alt="Laboratorio Clínico Sistematizado">
+    <img *ngFor="let imagen of imagenes; let i = index"
+      [src]="imagen"
+      [class.visible]="i === imagenActual"
+      alt="Laboratorio Clínico Sistematizado">
     <div class="hero-degradado"></div>
   </div>
 
@@ -21,7 +24,16 @@
     </div>
 
     <div class="hero-info">
-      <p>Más de {{ aniosExperiencia }} años cuidando la salud de nuestra comunidad.</p>
+      <p>Más de 30 años cuidando la salud de nuestra comunidad.</p>
     </div>
+  </div>
+
+  <div class="hero-puntos">
+    <button *ngFor="let imagen of imagenes; let i = index"
+      class="punto"
+      [class.activo]="i === imagenActual"
+      (click)="irAImagen(i)"
+      [attr.aria-label]="'Ver imagen ' + (i + 1)">
+    </button>
   </div>
 </section>

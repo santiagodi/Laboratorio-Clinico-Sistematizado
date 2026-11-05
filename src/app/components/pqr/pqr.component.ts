@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './pqr.component.css'
 })
 export class PqrComponent {
-  whatsapp = '573005264929';
-  correoDestino = 'santyijaji@gmail.com';
+  whatsapp = '+573137166521';
+  correoDestino = 'laboraclinsis@gmail.com';
 
   tipo = 'Petición';
   nombre = '';

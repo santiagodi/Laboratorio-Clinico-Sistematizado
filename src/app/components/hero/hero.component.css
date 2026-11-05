@@ -16,15 +16,25 @@
 }
 
 .hero-imagen img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.hero-imagen img.visible {
+  opacity: 1;
 }
 
 .hero-degradado {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0) 40%, #ffffff 95%);
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 55%, #ffffff 95%);
+  left: -1px;
+  right: -1px;
 }
 
 .hero-texto {
@@ -72,11 +82,54 @@
   cursor: pointer;
 }
 
+.hero-puntos {
+  position: absolute;
+  left: 60px;
+  bottom: 30px;
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+}
+
+.punto {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(60, 42, 152, 0.3);
+  overflow: hidden;
+  cursor: pointer;
+  transition: width 0.3s ease;
+}
+
+.punto.activo {
+  width: 36px;
+}
+
+.punto.activo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #3c2a98;
+  transform-origin: left;
+  animation: progreso 5s linear forwards;
+}
+
+@keyframes progreso {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
 @media (max-width: 900px) {
   .hero-imagen {
     width: 100%;
     clip-path: none;
     opacity: 0.25;
+  }
+
+  .hero-puntos {
+    left: 25px;
   }
 
   .hero-texto {
